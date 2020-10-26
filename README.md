@@ -31,3 +31,14 @@ Tabela responsável pelo cadastro dos centros de recurso.
 |status_imp|Varchar|	max_length=1|	blank=True, null=True # 'N'=new, 'U'=update, 'I'=integrated
 
 </details>
+
+
+Exportação
+-------------------------------
+
+<details>
+  <summary>Clique para expandir</summary>
+  
+teste
+
+</details>
