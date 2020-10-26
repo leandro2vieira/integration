@@ -12,18 +12,6 @@ A integração deve ser separada em duas etapas.
 Importação
 -------------------------------
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-
-|oi1|oi2|
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-|t1|t2|
-
-
 <details>
   <summary>Clique para expandir</summary>
   
