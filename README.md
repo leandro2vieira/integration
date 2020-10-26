@@ -5,8 +5,8 @@ A integração com o sistema da Vedois pode ser feito com N tecnologias, por exe
 Webservice, Tabela, View, CSV. A Vedois recomenda o uso de webservice ou tabela, pois possuem melhor performance/segurança.
 
 A integração deve ser separada em duas etapas.
-  * 1 Importação ( Vedois <-- ERP )
-  * 2 Exportação ( Vedois --> ERP )
+  * 1 - Importação ( Vedois <-- ERP )
+  * 2 - Exportação ( Vedois --> ERP )
 
 
 Importação
@@ -16,6 +16,12 @@ Importação
 | ------------- | ------------- |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
+
+
+|oi1|oi2|
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+|t1|t2|
 
 
 <details>
