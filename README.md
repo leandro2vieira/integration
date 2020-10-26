@@ -31,7 +31,7 @@ Nome da Tabela = **IMPORTMAQUINA**
 Tabela responsável pelo cadastro dos centros de recurso.
 
 |Coluna|Tipo de dado|Tamanho|Obs|
-|******|************|*******|***|
+|-------------|-------------|-------------|-------------|
 |id|	Integer|		|Precisa ser sequencial|
 |empresa|	Integer|		default=1||
 |codigo|	Varchar|max_length=30||
