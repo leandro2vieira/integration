@@ -1,3 +1,6 @@
+![Vedois Tecnologia](http://vedois.com.br/site/wp-content/uploads/2018/04/logovedoispreto3.png)
+
+
 Introdução sobre Integração
 -------------------------------
 
