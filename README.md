@@ -1,6 +1,5 @@
 ![Vedois Tecnologia](http://vedois.com.br/site/wp-content/uploads/2018/04/logovedoispreto3.png)
 
-
 Introdução sobre Integração
 -------------------------------
 
@@ -10,6 +9,9 @@ Webservice, Tabela, View, CSV. A Vedois recomenda o uso de webservice ou tabela,
 A integração deve ser separada em duas etapas.
   * 1 - Importação ( Vedois <-- ERP )
   * 2 - Exportação ( Vedois --> ERP )
+  
+Abaixo segue os layouts necessários, basta expandir.
+Além de ser possível baixar os scripts prontos com os creates tanto de import quanto export.
 
 
 Importação
