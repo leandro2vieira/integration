@@ -21,7 +21,7 @@ Importação
  <summary>Ver Tabelas</summary>
  
  **Sistema: Vedois-OEE** <br>
- **Atualizado em: 14/12/2020**
+ **Atualizado em: 15/12/2020**
 
 
  <details>
@@ -305,8 +305,217 @@ Exportação
 -------------------------------
 
 <details>
-  <summary>Clique para expandir</summary>
-  
-teste
+ <summary>Ver Tabelas</summary>
+ 
+ **Sistema: Vedois-OEE** <br>
+ **Atualizado em: 16/12/2020**<br>
+
+
+<details>
+  <summary>Nome da Tabela = EXPORTPRODUCAO</summary><br>
+
+   **OBS**:Necessário criar SEQUENCE: <br>
+   <br>
+  **-- PostgreSQL <br>**
+    CREATE SEQUENCE exportproducao_id_seq<br>
+      START WITH 1<br>
+      INCREMENT BY 1<br>
+      NO MINVALUE<br>
+      NO MAXVALUE<br>
+      CACHE 1;<br>
+
+  **-- SQL Server 2012 <br>**
+    CREATE SEQUENCE exportproducao_id_seq<br>
+      START WITH 1<br>
+      INCREMENT BY 1 ;<br>
+      NO MINVALUE<br>
+      NO MAXVALUE<br>
+      CACHE 1;<br>
+      SELECT next value for exportproducao_id_seq<br>
+      <br>
+
+
+|Coluna|Tipo de dado|Tamanho|Obs|
+|-------------|-------------|-------------|-------------|
+| id | IntegerField |  | primary_key=True |
+| data_geracao | DateTimeField |  | blank=True, null=True |
+| empresa | IntegerField |  | blank=True, null=True |
+| origem | Varchar | max_length=30 | blank=True, null=True |
+| op | Varchar | max_length=30 | blank=True, null=True |
+| estagio | IntegerField |  | blank=True, null=True |
+| sequencia_producao | IntegerField |  | blank=True, null=True |
+| produto | Varchar | max_length=30 | blank=True, null=True |
+| maquina | Varchar | max_length=30 | blank=True, null=True |
+| grupomaquina | Varchar | max_length=30 | blank=True, null=True |
+| ferramenta | Varchar | max_length=30 | blank=True, null=True |
+| operador | Varchar | max_length=30 | blank=True, null=True |
+| turno | IntegerField |  | blank=True, null=True |
+| reg | IntegerField |  | default=0, blank=True, null=True |
+| inicio | DateTimeField |  | blank=True, null=True |
+| fim |  | DateTimeField | blank=True, null=True |
+| duracao | IntegerField |  |  |
+| codigo_lote | Varchar | max_length=32 | default="", blank=True, null=True |
+| quantidade | DecimalField | max_digits=20, decimal_places=10 | default=0 |
+| quantidade2 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
+| quantidade3 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
+| taxa_de_conversao | DecimalField | max_digits=20, decimal_places=10 | default=1 |
+
+
+</details>
+
+<details>
+  <summary>Nome da Tabela = EXPORTREFUGO</summary><br>
+
+   **OBS**:Necessário criar SEQUENCE: <br>
+   <br>
+  **-- PostgreSQL<br>**
+    CREATE SEQUENCE exportrefugo_id_seq<br>
+      START WITH 1<br>
+      INCREMENT BY 1<br>
+      NO MINVALUE<br>
+      NO MAXVALUE<br>
+      CACHE 1;<br>
+
+  **-- SQL Server 2012<br>**
+    CREATE SEQUENCE exportrefugo_id_seq<br>
+      START WITH 1<br>
+      INCREMENT BY 1<br>
+      NO MINVALUE<br>
+      NO MAXVALUE<br>
+      CACHE 1;<br>
+      SELECT next value for exportrefugo_id_seq<br>
+      <br>
+
+
+|Coluna|Tipo de dado|Tamanho|Obs|
+|-------------|-------------|-------------|-------------|
+| id | IntegerField |  | primary_key=True |
+| data_geracao | DateTimeField |  | blank=True, null=True |
+| empresa | IntegerField |  | blank=True, null=True |
+| origem | Varchar | max_length=30 | blank=True, null=True |
+| op | Varchar | max_length=30 | blank=True, null=True |
+| estagio | IntegerField |  | blank=True, null=True |
+| sequencia_producao | IntegerField |  | blank=True, null=True |
+| produto | Varchar | max_length=30 | blank=True, null=True |
+| maquina | Varchar | max_length=30 | blank=True, null=True |
+| grupomaquina | Varchar | max_length=30 | blank=True, null=True |
+| ferramenta | Varchar | max_length=30 | blank=True, null=True |
+| operador | Varchar | max_length=30 | blank=True, null=True |
+| turno | IntegerField |  | blank=True, null=True |
+| reg | IntegerField |  | default=0, blank=True, null=True |
+| horario | DateTimeField |  | blank=True, null=True |
+| motivo | Varchar | max_length=30 | blank=True, null=True |
+| codigo_lote | Varchar | max_length=32 | default="", blank=True |
+| quantidade | DecimalField | max_digits=20, decimal_places=10 |  |
+| quantidade2 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
+| quantidade3 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
+| taxa_de_conversao | DecimalField | max_digits=20, decimal_places=10 | default=1 |
+| classificacao | Varchar | max_length=30 | blank=True, null=True |
+| etapa_causa | Varchar | max_length=30 | blank=True, null=True |
+| maquina_causa | Varchar | max_length=30 | blank=True, null=True |
+
+</details>
+
+
+<details>
+  <summary>Nome da Tabela = EXPORTPARADA</summary><br>
+
+   **OBS**:Necessário criar SEQUENCE: <br>
+   <br>
+  **-- PostgreSQL<br>**
+    CREATE SEQUENCE exportparada_id_seq<br>
+      START WITH 1<br>
+      INCREMENT BY 1<br>
+      NO MINVALUE<br>
+      NO MAXVALUE<br>
+      CACHE 1;<br>
+
+  **-- SQL Server 2012<br>**
+    CREATE SEQUENCE exportparada_id_seq<br>
+      START WITH 1<br>
+      INCREMENT BY 1<br>
+      NO MINVALUE<br>
+      NO MAXVALUE<br>
+      CACHE 1;<br>
+      SELECT next value for exportparada_id_seq<br>
+      <br>
+
+
+|Coluna|Tipo de dado|Tamanho|Obs|
+|-------------|-------------|-------------|-------------|
+| id | IntegerField |  | primary_key=True |
+| data_geracao | DateTimeField |  | blank=True, null=True |
+| empresa | IntegerField |  | blank=True, null=True |
+| origem | Varchar | max_length=30 | blank=True, null=True |
+| op | Varchar | max_length=30 | blank=True, null=True |
+| estagio | IntegerField |  | blank=True, null=True |
+| sequencia_producao | IntegerField |  | blank=True, null=True |
+| produto | Varchar | max_length=30 | blank=True, null=True |
+| maquina | Varchar | max_length=30 | blank=True, null=True |
+| grupomaquina | Varchar | max_length=30 | blank=True, null=True |
+| ferramenta | Varchar | max_length=30 | blank=True, null=True |
+| operador | Varchar | max_length=30 | blank=True, null=True |
+| turno | IntegerField |  | blank=True, null=True |
+| reg | IntegerField |  | default=0, blank=True, null=True |
+| inicio | DateTimeField |  | blank=True,<br> null=True |
+| fim |  | DateTimeField | blank=True,<br> null=True |
+| duracao | BigIntegerField |  |  |
+| motivo | Varchar | max_length=30 | blank=True, null=True |
+| setup | BooleanField | BooleanField | default=False |
+
+</details>
+
+<details>
+  <summary>Nome da Tabela = EXPORTCOMPONENTE</summary><br>
+
+   **OBS**:Necessário criar SEQUENCE: <br>
+   <br>
+  **-- PostgreSQL<br>**
+    CREATE SEQUENCE exportcomponente_id_seq<br>
+      START WITH 1<br>
+      INCREMENT BY 1<br>
+      NO MINVALUE<br>
+      NO MAXVALUE<br>
+      CACHE 1;<br>
+
+  **-- SQL Server 2012<br>**
+    CREATE SEQUENCE exportcomponente_id_seq<br>
+      START WITH 1<br>
+      INCREMENT BY 1<br>
+      NO MINVALUE<br>
+      NO MAXVALUE<br>
+      CACHE 1;<br>
+      SELECT next value for exportcomponente_id_seq<br>
+      <br>
+
+
+|Coluna|Tipo de dado|Tamanho|Obs|
+|-------------|-------------|-------------|-------------|
+| id | IntegerField |  | primary_key=True |
+| data_geracao | DateTimeField |  | blank=True, null=True |
+| empresa | IntegerField |  | blank=True, null=True |
+| origem | Varchar | max_length=30 | blank=True, null=True |
+| op | Varchar | max_length=30 | blank=True, null=True |
+| estagio | IntegerField |  | blank=True, null=True |
+| sequencia_producao | IntegerField |  | blank=True, null=True |
+| produto | Varchar | max_length=30 | blank=True, null=True |
+| maquina | Varchar | max_length=30 | blank=True, null=True |
+| grupomaquina | Varchar | max_length=30 | blank=True, null=True |
+| ferramenta | Varchar | max_length=30 | blank=True, null=True |
+| operador | Varchar | max_length=30 | blank=True, null=True |
+| turno | IntegerField |  | blank=True, null=True |
+| reg | IntegerField |  | default=0, blank=True, null=True |
+| codigo | Varchar | max_length=32 |  |
+| versao | Varchar | max_length=64 | blank=True, null=True |
+| descricao | Varchar | max_length=64 | blank=True, null=True |
+| codigo_barras | Varchar | max_length=64 |  |
+| tipo | Varchar | max_length=2 | L=lote+largura+espessura, M=massa,T=tinta, B=bobina |
+| lote | Varchar | max_length=32 | blank=True, null=True |
+| quantidade | DecimalField | max_digits=20, decimal_places=10 | default=0 |
+| atributo | DecimalField | max_digits=20, decimal_places=10 | default=0 |
+| atributo2 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
+| atributo3 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
+| taxa_de_conversao | DecimalField | max_digits=20, decimal_places=10 | default=1 |
+| inicio | DateTimeField |  | blank=True, null=True |
 
 </details>
