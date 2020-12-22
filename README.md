@@ -14,17 +14,17 @@ Abaixo segue os layouts necessários, basta expandir.
 Além de ser possível baixar os scripts prontos com os creates tanto de import quanto export.
 
 
-Importação
+1 - Importação
 -------------------------------
 
 <details>
  <summary>Ver Tabelas</summary>
  
  **Sistema: Vedois-OEE** <br>
- **Atualizado em: 15/12/2020**
+ **Atualizado em: 22/12/2020**
 
 
- <details>
+ 
    <summary>Nome da Tabela = IMPORTMAQUINA </summary>
 	<h4>Tabela responsável pelo cadastro dos centros de recurso.</h4>
 
@@ -37,10 +37,8 @@ Importação
  | ativa |	BooleanField |		|default=False|Define se a máquina está ativa/inativa|
  | status_imp | Varchar | max_length=1 | 'N'=new, 'U'=update, 'I'=integrated | Define status da linha, caso for importação por tabela. |
 
- </details>
 
 
- <details>
   <summary>Nome da Tabela = IMPORTGRUPOMAQUINA </summary>
  <h4>Tabela responsável por criar grupos de máquinas, para facilitar a consulta de duas ou mais máquinas em relatórios, índices, entre outros.</h4>
 
@@ -50,10 +48,10 @@ Importação
  | descricao | Varchar | max_length=128 |  | Descrição completa do grupo |
  | status_imp | Varchar | max_length=1 | 'N'=new, 'U'=update, 'I'=integrated | Define status da linha, caso for importação por tabela. |
 
- </details>
 
 
- <details>
+
+
   <summary>Nome da Tabela = IMPORTOPERADOR</summary>
 	<h4>Tabela responsável por cadastrar os operadores que irão utilizar os terminais.</h4>
 
@@ -65,10 +63,10 @@ Importação
  | ativo 	| BooleanField 	|  		 | default=True 		| Define ativo/inativo |
  | status_imp 	| Varchar	| max_length=1 	 | 'N'=new,<br>'U'=update,<br>'I'=integrated | Define status da linha, caso for importação por tabela.|
  
- </details>
 
 
- <details>
+
+
   <summary>Nome da Tabela = IMPORTMOTIVOPARADA </summary>
  <h4>Tabela responsável por cadastrar os motivos de parada de máquina, como por exemplo manutenção mecânica, elétrica, entre outros.</h4>
 
@@ -83,9 +81,9 @@ Importação
  | **ativa**	|BooleanField	|		 |default=True                       |Define ativo/inativo|
  | status_imp	|Varchar	|max_length=1    |'N'=new,<br>'U'=update,<br>'I'=integrated|Define status da linha, caso for importação por tabela.|
  
- </details>
 
-<details>
+
+
  <summary>Nome da Tabela = IMPORTMOTIVOREFUGO</summary>
 <h4>Tabela responsável por cadastrar os motivos de refugo/apara que acontecem durante o processo produtivo.</h4>
 	
@@ -96,9 +94,9 @@ Importação
 |descricao	|Varchar       |max_length=128	|				     |Descrição do refugo|
 |status_imp	|Varchar       |max_length=1	|'N'=new,<br>'U'=update,<br>'I'=integrated  |Define status da linha, caso for importação por tabela.|
  
-</details>
 
-<details>
+
+
  <summary>Nome da Tabela = IMPORTPRODUTO</summary>
 <h4>São cadastrados os produtos, para posterior associar às ordens de produção.</h4>
  
@@ -109,11 +107,9 @@ Importação
 |descricao	|Varchar       |max_length=128	|					|Descrição do produto|
 |status_imp	|Varchar       |max_length=1	|'N'=new,<br>'U'=update,<br>'I'=integrated	|Define status da linha, caso for importação por tabela.|
  
-</details>
 
 
-<details>
-        <summary>Nome da Tabela = IMPORTFERRAMENTA</summary>
+<summary>Nome da Tabela = IMPORTFERRAMENTA</summary>
 <h4>Ferramentas definem quanto deve-se incrementar a cada pulso de máquina. Utilizando uma injetora como exemplo, uma ferramenta seria o molde. Pois determinado
 molde, produz N peças a cada ciclo, com um tempo estimado de 30 segundos por exemplo.
 Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na importação.</h4>
@@ -130,10 +126,7 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 |limite_parada		  |Integer	|				|				    |Este campo substitui o tempo_ciclo quando usado um modo exclusivo para usinagem, geralmente Tornos CNC.|
 |status_imp		  |Varchar	|max_length=1			|'N'=new,<br>'U'=update,<br>'I'=integrated|Define status da linha, caso for importação por tabela.|
 
-</details>
 
-
-<details>
   <summary>Nome da Tabela = IMPORTFERRAMENTAPRODUTO</summary>
  <h4>Esta tabela é usada quando não há ImportFerramenta. A diferenciação das tabelas é que uma associa por códigos, esta utiliza cinco campos (empresa, maquina, produto,
  derivação e codigo_operacao).
@@ -157,10 +150,7 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 |situacao		  |Integer	|				|default=0			    		||
 |status_imp		  |Varchar	|max_length=1			|'N'=new,<br>'U'=update,<br>'I'=integrated	|Define status da linha, caso for importação por tabela.|
 
-</details>
 
-
-<details>
  <summary>Nome da Tabela = IMPORTOP</summary>
 <h4>Tabela responsável pelas ordens de produção.</h4>
 
@@ -182,10 +172,7 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 |prioridade	|DecimalField	|max_digits=20,<br>decimal_places=10|default=1			     		|distribuição das ordens no modulo planejamento.|
 |status_imp	|Varchar	|max_length=1			    |'N'=new,<br> 'U'=update,<br> 'I'=integrated|Define status da linha, caso for importação por tabela.|
 
-</details>
 
-
-<details>
  <summary>Nome da Tabela = IMPORTSEQUENCIAPRODUCAO</summary>
 <h4>Tabela responsável por concentrar as sequencias de produção, também conhecidas como roteiros, atividades, entre outros.</h4>
 
@@ -206,11 +193,11 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 |tempo_previsto	     |BigInteger|		|default=0				|Tempo de produção em segundos|
 |status_imp	     |Varchar|max_length=1	|'N'=new,<br>'U'=update,<br>'I'=integrated|Define status da linha, caso for importação por tabela.|
 
-</details>
-
 
 <details>
- <summary>Nome da Tabela = IMPORTCOMPONENTESIMPORTADOS</summary>
+ <summary>Consumo de Componente</summary>
+
+<summary>Nome da Tabela = IMPORTCOMPONENTESIMPORTADOS</summary>
 <h4>Tabela responsável por cadastrar os componentes que não são gerados pelo terminal, por exemplo a compra de bobinas de terceiros, etc.</h4>
 
 |Coluna         |Tipo de dado   |Tamanho        |Obs		                     		|Descrição    |
@@ -249,9 +236,7 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 |controle	|Integer	|	        |default=0,<br> blank=True,<br> null=True	||
 |status_imp	|Varchar	|max_length=1   |'N'=new,<br>'U'=update,<br>'I'=integrated	|Define status da linha, caso for importação por tabela.|
 
-</details>
 
-<details>
  <summary>Nome da Tabela = IMPORTCOMPONENTESOP</summary>
 <h4>Tabela responsável por autorizar os produtos que podem ser consumidos em determinadas Ordens</h4>
 
@@ -271,12 +256,13 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 |status_imp		|Varchar		|max_length=1				|'N'=new,<br>'U'=update,<br>'I'=integrated|Define status da linha, caso for importação por tabela.|
 
 </details>
+
 </details>
 
 
 
 
-Exportação
+2 - Exportação
 -------------------------------
 
 <details>
