@@ -272,7 +272,6 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
  **Atualizado em: 16/12/2020**<br>
 
 
-<details>
   <summary>Nome da Tabela = EXPORTPRODUCAO</summary><br>
 
    **OBS**:Necessário criar SEQUENCE: <br>
@@ -321,10 +320,6 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 | quantidade3 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
 | taxa_de_conversao | DecimalField | max_digits=20, decimal_places=10 | default=1 |
 
-
-</details>
-
-<details>
   <summary>Nome da Tabela = EXPORTREFUGO</summary><br>
 
    **OBS**:Necessário criar SEQUENCE: <br>
@@ -375,10 +370,7 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 | etapa_causa | Varchar | max_length=30 | blank=True, null=True |
 | maquina_causa | Varchar | max_length=30 | blank=True, null=True |
 
-</details>
 
-
-<details>
   <summary>Nome da Tabela = EXPORTPARADA</summary><br>
 
    **OBS**:Necessário criar SEQUENCE: <br>
@@ -424,9 +416,6 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 | motivo | Varchar | max_length=30 | blank=True, null=True |
 | setup | BooleanField | BooleanField | default=False |
 
-</details>
-
-<details>
   <summary>Nome da Tabela = EXPORTCOMPONENTE</summary><br>
 
    **OBS**:Necessário criar SEQUENCE: <br>
