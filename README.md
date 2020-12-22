@@ -30,8 +30,8 @@ Importação
 
  |Coluna|Tipo de dado|Tamanho|Obs|Descrição|
  |-------------|-------------|-------------|-------------|-------------|
- | empresa | Integer |  | default=1 | Código da Empresa |
- | codigo |	Varchar | max_length=30 |  | Código da máquina |
+ | **empresa** | Integer |  | default=1 | Código da Empresa |
+ | **codigo** |	Varchar | max_length=30 |  | Código da máquina |
  | descricao | Varchar | max_length=128 |  | Descrição da máquina |
  | grupo | Varchar | max_length=32 |  | Nome do grupo de máquinas, associando com a ImportGrupoMaquina |	
  | ativa |	BooleanField |		|default=False|Define se a máquina está ativa/inativa|
@@ -46,7 +46,7 @@ Importação
 
  |Coluna|Tipo de dado|Tamanho|Obs|Descrição|
  |-------------|-------------|-------------|-------------|-------------|
- | nome | Varchar | max_length=32 |  | Nome do grupo de máquinas |
+ | **nome** | Varchar | max_length=32 |  | Nome do grupo de máquinas |
  | descricao | Varchar | max_length=128 |  | Descrição completa do grupo |
  | status_imp | Varchar | max_length=1 | 'N'=new, 'U'=update, 'I'=integrated | Define status da linha, caso for importação por tabela. |
 
@@ -59,8 +59,8 @@ Importação
 
  |Coluna        |Tipo de dado   |Tamanho         |Obs		                     |Descrição    |
  |--------------|---------------|----------------|-----------------------------------|-------------|
- | empresa	| Integer 	| default=1 	 |  					| Código da empresa |
- | codigo	| Varchar 	| max_length=30	 |  				| Código do operador |
+ | **empresa**	| Integer 	| default=1 	 |  					| Código da empresa |
+ | **codigo**	| Varchar 	| max_length=30	 |  				| Código do operador |
  | nome 	| Varchar 	| max_length=128 |  				| Nome do operador |
  | ativo 	| BooleanField 	|  		 | default=True 		| Define ativo/inativo |
  | status_imp 	| Varchar	| max_length=1 	 | 'N'=new,<br>'U'=update,<br>'I'=integrated | Define status da linha, caso for importação por tabela.|
@@ -80,9 +80,7 @@ Importação
  | abreviacao	|Varchar	|max_length=16   |blank=True                         |Abreviação da parada|
  | senha        |Varchar	|max_length=32   |blank=True                         |Se não tiver senha, manter vazio. Se usar algum valor, ele será solicitado para confirmar a parada. Muito usado para mecânicos/eletricistas, onde apenas estes profissionais podem inserir determinadas paradas.|
  | cor	        |RGBColorField	|		 |blank=True,<br> null=True              |Exemplo: ‘#ffffff’ = branco|
- | programada	|BooleanField	|		 |default=False                      |Quando true, este motivo de parada irá descontar do tempo previsto de produção, influenciando diretamente na disponibilidade do centro de recurso.|
  | **ativa**	|BooleanField	|		 |default=True                       |Define ativo/inativo|
- | setup	|BooleanField	|		 |default=False	                     |Define se é uma parada de setup|
  | status_imp	|Varchar	|max_length=1    |'N'=new,<br>'U'=update,<br>'I'=integrated|Define status da linha, caso for importação por tabela.|
  
  </details>
@@ -93,10 +91,9 @@ Importação
 	
 |Coluna         |Tipo de dado  |Tamanho         |Obs		                     |Descrição    |
 |---------------|--------------|----------------|------------------------------------|-------------|
-|empresa        |Integer       |		|default=1			     |Código da empresa|
-|codigo		|Varchar       |max_length=30	|				     |Código do refugo|
+|**empresa**        |Integer       |		|default=1			     |Código da empresa|
+|**codigo**		|Varchar       |max_length=30	|				     |Código do refugo|
 |descricao	|Varchar       |max_length=128	|				     |Descrição do refugo|
-|qualidade	|BooleanField  |		|Default=false			     |Define se é um refugo que desconta do índice de qualidade|
 |status_imp	|Varchar       |max_length=1	|'N'=new,<br>'U'=update,<br>'I'=integrated  |Define status da linha, caso for importação por tabela.|
  
 </details>
@@ -107,25 +104,11 @@ Importação
  
 |Coluna         |Tipo de dado  |Tamanho         |Obs		                     |Descrição    |
 |---------------|--------------|----------------|------------------------------------|-------------|
-|empresa	|Integer       |		|default=1				|Código da empresa|
-|codigo		|Varchar       |max_length=30	|					|Código do produto|
+|**empresa**	|Integer       |		|default=1				|Código da empresa|
+|**codigo**		|Varchar       |max_length=30	|					|Código do produto|
 |descricao	|Varchar       |max_length=128	|					|Descrição do produto|
 |status_imp	|Varchar       |max_length=1	|'N'=new,<br>'U'=update,<br>'I'=integrated	|Define status da linha, caso for importação por tabela.|
  
-</details>
-
-
-<details>
- <summary>Nome da Tabela = IMPORTSUBPRODUTO</summary>
-<h4>Subproduto da tabela de produtos.</h4>
- 
-|Coluna         |Tipo de dado  |Tamanho         |Obs		                     |Descrição    |
-|---------------|--------------|----------------|------------------------------------|-------------|
-|empresa	|Integer	|		|default=1				|Código da empresa|
-|codigo		|Varchar	|max_length=30	|					|Código do sub produto|
-|descricao	|Varchar	|max_length=128	|					|Descrição do sub produto|
-|status_imp	|Varchar	|max_length=1	|'N'=new,<br>'U'=update,<br>'I'=integrated	|Define status da linha, caso for importação por tabela.|
-
 </details>
 
 
@@ -137,16 +120,14 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
  
 |Coluna                   |Tipo de dado |Tamanho           		|Obs		                    |Descrição    |
 |-------------------------|-------------|-------------------------------|-----------------------------------|-------------|
-|empresa		  |Integer	|				|				    |Código da empresa|
-|codigo			  |Varchar	|max_length=30			|				    |Código da ferramenta|
+|**empresa**		  |Integer	|				|				    |Código da empresa|
+|**codigo**			  |Varchar	|max_length=30			|				    |Código da ferramenta|
 |descricao		  |Varchar	|max_length=128			|				    |Descrição da ferramenta|
 |coeficiente_multiplicacao|DecimalField	|max_digits=20,<br>decimal_places=10|				    |Número de peças incrementadas à cada ciclo de máquina. Por exemplo número de cavidades quando for injetora.|
 |depreciacao		  |DecimalField |max_digits=20,<br>decimal_places=10|				    |O valor padrão é 0. Quando se tem um molde que uma cavidade está danificada, deve-se enviar a quantidade danificada nesta coluna.|
-|tempo_ciclo		  |Integer	|				|				    |Define tempo padrão da ferramenta, ou seja, ciclo padrão. O valor é milissegundo. 10 segundos = 10.000|
+|**tempo_ciclo**		  |Integer	|				|				    |Define tempo padrão da ferramenta, ou seja, ciclo padrão. O valor é milissegundo. 10 segundos = 10.000|
 |limite_ciclo		  |Integer	|				|				    |Este limite da uma “tolerância” ao tempo normal de ciclo, como no exemplo acima usei o valor 10.000. Se eu quiser dar 30 segundos de tolerância, utilizo o valor 40.000.|
 |limite_parada		  |Integer	|				|				    |Este campo substitui o tempo_ciclo quando usado um modo exclusivo para usinagem, geralmente Tornos CNC.|
-|tempo_insercao		  |BigInteger	|				|default = 0			    |Define o tempo ideal para troca de ferramenta, usado para cálculos de setup.|
-|tempo_remocao		  |BigInteger	|				|default = 0			    |Define o tempo ideal para troca de ferramenta, usado para cálculos de setup.|
 |status_imp		  |Varchar	|max_length=1			|'N'=new,<br>'U'=update,<br>'I'=integrated|Define status da linha, caso for importação por tabela.|
 
 </details>
@@ -162,20 +143,17 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 
 |Coluna                   |Tipo de dado |Tamanho           		|Obs		                    |Descrição    |
 |-------------------------|-------------|-------------------------------|-----------------------------------|-------------|
-|empresa		  |Integer	|				|default=1			    		|Código da empresa|
-|maquina		  |Varchar	|max_length=30			|				    		|Código de maquina|
-|produto		  |Varchar	|max_length=30			|				    		|Código de produto|
-|derivacao		  |Varchar	|max_length=30			|				    		|Derivação do produto|
-|codigo_operacao	  |Varchar	|max_length=30			|				    		|Código da operação|
+|**empresa**		  |Integer	|				|default=1			    		|Código da empresa|
+|**maquina**		  |Varchar	|max_length=30			|				    		|Código de maquina|
+|**produto**		  |Varchar	|max_length=30			|				    		|Código de produto|
+|**derivacao**		  |Varchar	|max_length=30			|				    		|Derivação do produto|
+|**codigo_operacao**	  |Varchar	|max_length=30			|				    		|Código da operação|
 |descricao		  |Varchar	|max_length=128			|				    		|Descrição da Ferramenta|
 |coeficiente_multiplicacao|DecimalField	|max_digits=20,<br>decimal_places=10|				    		|Número de peças incrementadas à cada ciclo de máquina.Por exemplo número de cavidades quando for injetora.|
 |depreciacao		  |DecimalField	|max_digits=20,<br>decimal_places=10|default = 0			    	|O valor padrão é 0. Quando se tem um molde que uma cavidade está danificada, deve-se enviar a quantidade danificada nesta coluna.|
 |tempo_ciclo		  |Integer	|				|				    		|Define tempo padrão da ferramenta, ou seja, ciclo padrão.O valor é milissegundo. 10 segundos = 10.000|
 |limite_ciclo		  |Integer	|				|				   		|Este limite da uma “tolerância” ao tempo normal de ciclo,como no exemplo acima usei o valor 10.000. Se eu quiser dar 30 segundos de tolerância, utilizo o valor 40.000.|
 |limite_parada		  |Integer	|				|				   		|Este campo substitui o tempo_ciclo quando usado um modo exclusivo para usinagem, geralmente Tornos CNC.|
-|tempo_insercao		  |Integer	|				|default = 0			    		|Define o tempo ideal para troca de ferramenta, usado para cálculos de setup.|
-|tempo_remocao		  |BigInteger	|				|default = 0			   		|Define o tempo ideal para troca de ferramenta, usado para cálculos de setup.|
-|tipo_cadastro		  |Varchar	|max_length=1			|default='I'#<br> I=importador,<br>M=maquina	||
 |situacao		  |Integer	|				|default=0			    		||
 |status_imp		  |Varchar	|max_length=1			|'N'=new,<br>'U'=update,<br>'I'=integrated	|Define status da linha, caso for importação por tabela.|
 
@@ -188,12 +166,11 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 
 |Coluna         |Tipo de dado   |Tamanho         		|Obs		                     |Descrição    |
 |---------------|---------------|-------------------------------|------------------------------------|-------------|
-|empresa	|Integer	|				    |default=1			     		|Código da empresa|
-|origem		|Varchar	|max_length=30			    |default='0'			     	|Código da origem|
-|codigo		|Varchar	|max_length=30			    |				     		|Código da ordem|
+|**empresa**	|Integer	|				    |default=1			     		|Código da empresa|
+|**origem**		|Varchar	|max_length=30			    |default='0'			     	|Código da origem|
+|**codigo**		|Varchar	|max_length=30			    |				     		|Código da ordem|
 |descricao	|Varchar	|max_length=128			    |blank=True,<br> null=True		     	|Descrição da ordem|
-|produto	|Varchar	|max_length=30			    |blank=True,<br> null=True		     	|Código do produto|
-|subproduto	|Varchar	|max_length=30			    |blank=True,<br> null=True		   	|Código do sub produto|
+|**produto**	|Varchar	|max_length=30			    |blank=True,<br> null=True		     	|Código do produto|
 |derivacao	|Varchar	|max_length=30			    |blank=True,<br> null=True		     	|Derivação do produto|
 |pedido		|Integer	|				    |default=1,<br>blank=True,<br> null=True    |Número do pedido|
 |unidade_medida |Varchar	|max_length=128			    |default="PC",<br>blank=True,<br>null=True  |Unidade de medida, ex: pc, metros|
@@ -214,12 +191,12 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 
 |Coluna         |Tipo de dado  |Tamanho         |Obs		                     |Descrição    |
 |---------------|--------------|----------------|------------------------------------|-------------|
-|empresa	     |Integer	|		|default=1				|Código da empresa|
-|origem		     |Varchar	|max_length=30	|default='0'				|Código da origem|
-|codigo		     |Varchar	|max_length=30	|					|Código da Ordem|
-|sequencia	     |Integer	|		|					|Sequência do Roteiro|
-|estagio	     |Integer	|		|					|Codigo do estagio|
-|maquina	     |Varchar	|max_length=30	|blank=True,<br> null=True		|Codigo da maquina|
+|**empresa**	     |Integer	|		|default=1				|Código da empresa|
+|**origem**		     |Varchar	|max_length=30	|default='0'				|Código da origem|
+|**codigo**		     |Varchar	|max_length=30	|					|Código da Ordem|
+|**sequencia**	     |Integer	|		|					|Sequência do Roteiro|
+|**estagio**	     |Integer	|		|					|Codigo do estagio|
+|**maquina**	     |Varchar	|max_length=30	|blank=True,<br> null=True		|Codigo da maquina|
 |ferramenta	     |Varchar	|max_length=30	|blank=True,<br> null=True		|Codigo da ferramenta|
 |codigo_operacao     |Varchar	|max_length=30	|blank=True,<br> null=True		|Código da operacao|
 |quantidade	     |DecimalField|max_digits=20,<br>decimal_places=10|			|Quantidade prevista|
