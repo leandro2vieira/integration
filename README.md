@@ -33,10 +33,8 @@ Importação
  | empresa | Integer |  | default=1 | Código da Empresa |
  | codigo |	Varchar | max_length=30 |  | Código da máquina |
  | descricao | Varchar | max_length=128 |  | Descrição da máquina |
- | linear | BooleanField |  | default=False | Define se a máquina é linear, se ativo, o sistema troca automaticamente tudo que é relacionado a ciclo, para medida linear, por exemplo metros. |
  | grupo | Varchar | max_length=32 |  | Nome do grupo de máquinas, associando com a ImportGrupoMaquina |	
  | ativa |	BooleanField |		|default=False|Define se a máquina está ativa/inativa|
- | fator_velocidade |	DecimalField |	max_digits=20, decimal_places=10 | default=1 | Define modo de velocidade, manter default = 1 |
  | status_imp | Varchar | max_length=1 | 'N'=new, 'U'=update, 'I'=integrated | Define status da linha, caso for importação por tabela. |
 
  </details>
