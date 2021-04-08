@@ -187,6 +187,8 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 |ferramenta	     |Varchar	|max_length=30	|blank=True,<br> null=True		|Codigo da ferramenta|
 |codigo_operacao     |Varchar	|max_length=30	|blank=True,<br> null=True		|Código da operacao|
 |quantidade	     |DecimalField|max_digits=20,<br>decimal_places=10|			|Quantidade prevista|
+|taxa_de_conversao   |Integer   |               |			                |taxa de conversão usado para caso a unidade de medida seja M².|
+|unidade_medida	     |Varchar|max_digits=128,<br>default="PC"|blank=True, null=True	|Unidade de medida da sequencia, Exemplo: PC(peça), M² (metro quadrado)|
 |data_prevista_inicio|DateTimeField|		|blank=True,<br> null=True		|Data prevista de inicio|
 |data_prevista_fim   |DateTimeField|		|blank=True,<br> null=True		|Data prevista de termino|
 |setup_previsto	     |BigInteger|		|default=0				|Tempo de setup em segundos|
