@@ -14,7 +14,7 @@ create table importferramenta
     tempo_insercao            number(19)          default 0,
     tempo_remocao             number(19)          default 0,
     status_imp                varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 );
 
 create table importferramenta_id
@@ -58,7 +58,7 @@ create table importferramentaproduto
         check (tipo_cadastro = 'I' OR tipo_cadastro = 'M'),
     situacao                  number(10)             default 0,
     status_imp                varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 );
 
 create table importferramentaprodutoid
@@ -88,7 +88,7 @@ create table importgrupomaquina
     nome       varchar2(32),
     descricao  varchar2(128),
     status_imp varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 );
 
 create table importgrupomaquina_id
@@ -123,7 +123,7 @@ create table importmaquina
     ativa            varchar2(5) default 'True',
     fatorvelocidade number(1) default 1,
     status_imp       varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 );
 
 create table importmaquina_id_table
@@ -159,7 +159,7 @@ create table importmotivoparada
     ativa      varchar2(1) default '1',
     setup      varchar2(1) default '0',
     status_imp varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 );
 
 create table importmotivoparada_id
@@ -190,7 +190,7 @@ create table importmotivorefugo
     descricao  varchar2(128),
     qualidade  varchar2(1) default '0',
     status_imp varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 );
 
 create table importmotivorefugo_id
@@ -234,7 +234,7 @@ create table importop
     situacao       varchar2(1)
         check (situacao = 'L' OR situacao = 'F' OR situacao = 'C'),
     status_imp     varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 );
 
 create table importop_id_table
@@ -265,8 +265,9 @@ create table importoperador
     nome       varchar2(128),
     ativo      number(1) default '1',
     status_imp varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 );
+
 
 create table importoperador_id_table
 (
@@ -295,7 +296,7 @@ create table importproduto
     codigo     varchar2(30),
     descricao  varchar2(128),
     status_imp varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 );
 
 create table importproduto_id_table
@@ -339,7 +340,7 @@ create table importsequenciaproducao
     situacao             varchar2(1),
         check (situacao = 'L' OR situacao = 'F' OR situacao = 'C'),
     status_imp           varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 
 );
 
@@ -370,7 +371,7 @@ create table importsubproduto
     codigo     varchar2(30),
     descricao  varchar2(128),
     status_imp varchar2(1)
-        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N')
+        check (status_imp = 'I' OR status_imp = 'U' OR status_imp = 'N' OR status_imp = 'E')
 );
 
 create table importsubproduto_id
