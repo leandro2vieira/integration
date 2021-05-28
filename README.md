@@ -297,10 +297,10 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
       <br>
 
 
-|Coluna|Tipo de dado|Tamanho|Obs|
+|Coluna|Tipo de dado|Tamanho|Obs|Descrição|
 |-------------|-------------|-------------|-------------|
-| id | IntegerField |  | primary_key=True |
-| data_geracao | DateTimeField |  | blank=True, null=True |
+| id | IntegerField |  | primary_key=True | id criado sequencial
+| data_geracao | DateTimeField |  | blank=True, null=True | data no momento do envio do dado.
 | empresa | IntegerField |  | blank=True, null=True |
 | origem | Varchar | max_length=30 | blank=True, null=True |
 | op | Varchar | max_length=30 | blank=True, null=True |
@@ -312,11 +312,11 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 | ferramenta | Varchar | max_length=30 | blank=True, null=True |
 | operador | Varchar | max_length=30 | blank=True, null=True |
 | turno | IntegerField |  | blank=True, null=True |
-| reg | IntegerField |  | default=0, blank=True, null=True |
-| inicio | DateTimeField |  | blank=True, null=True |
-| fim |  | DateTimeField | blank=True, null=True |
-| duracao | IntegerField |  |  |
-| codigo_lote | Varchar | max_length=32 | default="", blank=True, null=True |
+| reg | IntegerField |  | default=0, blank=True, null=True | esse campo é responsavel por saber o "status" do evento, como reg = 2 enviado ou 5 erro.
+| inicio | DateTimeField |  | blank=True, null=True | inicio do evento
+| fim |  | DateTimeField | blank=True, null=True | fim do evento
+| duracao | IntegerField |  |  | duracao do evento fim - inicio
+| codigo_lote | Varchar | max_length=32 | default="", blank=True, null=True | Caso o cliente tenha essa informação o campo é alimentado
 | quantidade | DecimalField | max_digits=20, decimal_places=10 | default=0 |
 | quantidade2 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
 | quantidade3 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
@@ -347,8 +347,8 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 
 |Coluna|Tipo de dado|Tamanho|Obs|
 |-------------|-------------|-------------|-------------|
-| id | IntegerField |  | primary_key=True |
-| data_geracao | DateTimeField |  | blank=True, null=True |
+| id | IntegerField |  | primary_key=True | id criado sequencial
+| data_geracao | DateTimeField |  | blank=True, null=True | data no momento do envio do dado.
 | empresa | IntegerField |  | blank=True, null=True |
 | origem | Varchar | max_length=30 | blank=True, null=True |
 | op | Varchar | max_length=30 | blank=True, null=True |
@@ -360,10 +360,10 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 | ferramenta | Varchar | max_length=30 | blank=True, null=True |
 | operador | Varchar | max_length=30 | blank=True, null=True |
 | turno | IntegerField |  | blank=True, null=True |
-| reg | IntegerField |  | default=0, blank=True, null=True |
-| horario | DateTimeField |  | blank=True, null=True |
+| reg | IntegerField |  | default=0, blank=True, null=True | Esse campo é responsavel por saber o "status" do evento, como reg = 2 enviado ou 5 erro.
+| horario | DateTimeField |  | blank=True, null=True | Horario do apontamento de refugo.
 | motivo | Varchar | max_length=30 | blank=True, null=True |
-| codigo_lote | Varchar | max_length=32 | default="", blank=True |
+| codigo_lote | Varchar | max_length=32 | default="", blank=True | Caso o cliente tenha essa informação o campo é alimentado
 | quantidade | DecimalField | max_digits=20, decimal_places=10 |  |
 | quantidade2 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
 | quantidade3 | DecimalField | max_digits=20, decimal_places=10 | default=0 |
@@ -411,7 +411,7 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 | ferramenta | Varchar | max_length=30 | blank=True, null=True |
 | operador | Varchar | max_length=30 | blank=True, null=True |
 | turno | IntegerField |  | blank=True, null=True |
-| reg | IntegerField |  | default=0, blank=True, null=True |
+| reg | IntegerField |  | default=0, blank=True, null=True | Esse campo é responsavel por saber o "status" do evento, como reg = 2 enviado ou 5 erro.
 | inicio | DateTimeField |  | blank=True,<br> null=True |
 | fim |  | DateTimeField | blank=True,<br> null=True |
 | duracao | BigIntegerField |  |  |
@@ -456,7 +456,7 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 | ferramenta | Varchar | max_length=30 | blank=True, null=True |
 | operador | Varchar | max_length=30 | blank=True, null=True |
 | turno | IntegerField |  | blank=True, null=True |
-| reg | IntegerField |  | default=0, blank=True, null=True |
+| reg | IntegerField |  | default=0, blank=True, null=True | Esse campo é responsavel por saber o "status" do evento, como reg = 2 enviado ou 5 erro.
 | codigo | Varchar | max_length=32 |  |
 | versao | Varchar | max_length=64 | blank=True, null=True |
 | descricao | Varchar | max_length=64 | blank=True, null=True |
