@@ -390,3 +390,103 @@ begin
  select importsubproduto_id_seq.nextval into :new.id from dual;
 end;
 /
+
+create table importcomponentesimportados
+(
+    id             number(10) not null
+        constraint importcomponentesimportados_pkey
+            primary key,
+    empresa        number(10)             default 1,
+    codigo         varchar2(30),
+    op             varchar2(30),
+    master_op      varchar2(30),
+    origem         varchar2(30)     default 0,
+    estagio        number(10),
+    maquina        varchar2(30),
+    operador       varchar2(30),
+    pedido         varchar2(30),
+    versao         varchar2(5),
+    descricao      varchar2(128),
+    dimensao       varchar2(30),
+    validade       varchar2(5),
+    data_fabricacao datetime,
+    lote           varchar2(30),
+    componente_origem varchar2(30),
+    quantidade     number(20, 10) default 0,
+    quantidade_estornada number(20, 10) default 0,
+    peso           number(20, 10) default 0,
+    taxa_de_conversao number(20, 10) default 1,
+    tara           number(20, 10) default 0,
+    volumes        number(10) default 0,
+    tipo           varchar2(5) default 'P',
+    unidade        varchar2(5) default 'PC',
+    codigo_etiqueta     varchar2(30),
+    tipo_etiqueta       varchar2(30),
+    lote_etiqueta       varchar2(30),
+    derivacao           varchar2(30),
+    uso varchar2(5)
+        check ([uso] = 'N' OR [uso] = 'P' OR [uso] = 'T' OR [uso] = 'F'),
+    situacao       varchar2(1)
+        check ([situacao] = 'A' OR [situacao] = 'I'),
+    reg        number(10) default 0,
+    controle   number(10) default 0,
+    status_imp     varchar2(1)
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+)
+
+create table importcomponentesimportados_id
+(
+    id number(10) 
+        primary key
+);
+
+-- Generate ID using sequence and trigger
+create sequence importcomponentesimportados_id_seq start with 1 increment by 1;
+
+create or replace trigger importcomponentesimportados_id_seq_tr
+ before insert on importcomponentesimportados_id for each row
+ when (new.id is null)
+begin
+ select importcomponentesimportados_id_seq.nextval into :new.id from dual;
+end;
+/
+
+create table importcomponentesop
+(
+    id             number(10) not null
+        constraint importcomponentesop_pkey
+            primary key,
+    empresa        number(10)             default 1,
+    codigo         varchar2(30),
+    op             varchar2(30),
+    origem         varchar2(30)     default 0,
+    estagio        number(10),
+    identificador  number(10) default 0,
+    maquina        varchar2(30),
+    codigo_componente    varchar2(32),
+    derivacao_componente varchar2(32),
+    tipo varchar2(5),
+
+    quantidade_prevista     number(20, 10) default 0,
+    quantidade_reservada number(20, 10) default 0,
+    reg        number(10) default 0,
+    status_imp     varchar2(1)
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+)
+
+create table importcomponentesop_id
+(
+    id number(10) 
+        primary key
+);
+
+-- Generate ID using sequence and trigger
+create sequence importcomponentesop_id_seq start with 1 increment by 1;
+
+create or replace trigger importcomponentesop_id_seq_tr
+ before insert on importcomponentesop_id for each row
+ when (new.id is null)
+begin
+ select importcomponentesop_id_seq.nextval into :new.id from dual;
+end;
+/

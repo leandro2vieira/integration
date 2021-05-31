@@ -169,3 +169,62 @@ CREATE TABLE IMPORTSEQUENCIAPRODUCAO
   taxa_de_conversao    INTEGER
 
 );
+
+create table IMPORTCOMPONENTESIMPORTADOS
+(
+    id             SERIAL          NOT NULL,
+    empresa        INTEGER             default 1,
+    codigo         varchar(30),
+    op             varchar(30),
+    master_op      varchar(30),
+    origem         varchar(30)     default 0,
+    estagio        INTEGER,
+    maquina        varchar(30),
+    operador       varchar(30),
+    pedido         varchar(30),
+    versao         varchar(5),
+    descricao      varchar(128),
+    dimensao       varchar(30),
+    validade       varchar(5),
+    data_fabricacao TIMESTAMP WITH TIME ZONE,
+    lote           varchar(30),
+    componente_origem varchar(30),
+    quantidade     NUMERIC(20, 10) default 0,
+    quantidade_estornada NUMERIC(20, 10) default 0,
+    peso           NUMERIC(20, 10) default 0,
+    taxa_de_conversao NUMERIC(20, 10) default 1,
+    tara           NUMERIC(20, 10) default 0,
+    volumes        INTEGER default 0,
+    tipo           varchar(5) default 'P',
+    unidade        varchar(5) default 'PC',
+    codigo_etiqueta     varchar(30),
+    tipo_etiqueta       varchar(30),
+    lote_etiqueta       varchar(30),
+    derivacao           varchar(30),
+    uso                 varchar(5),
+    situacao            varchar(1),
+    reg                 INTEGER default 0,
+    controle            INTEGER default 0,
+    status_imp          varchar(1)
+)
+go
+
+create table importcomponentesop
+(
+    id             SERIAL          NOT NULL,
+    empresa        INTEGER default 1,
+    codigo         varchar(30),
+    op             varchar(30),
+    origem         varchar(30)     default 0,
+    estagio        INTEGER,
+    identificador  INTEGER default 0,
+    maquina        varchar(30),
+    codigo_componente    varchar(32),
+    derivacao_componente varchar(32),
+    tipo varchar(5),
+    quantidade_prevista     NUMERIC(20, 10) default 0,
+    quantidade_reservada    NUMERIC(20, 10) default 0,
+    reg        INTEGER default 0,
+    status_imp     varchar(1)
+)
+go
