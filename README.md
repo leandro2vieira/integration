@@ -141,13 +141,13 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 |**produto**		  |Varchar	|max_length=30			|				    		|Código de produto|
 |**derivacao**		  |Varchar	|max_length=30			|				    		|Derivação do produto|
 |**codigo_operacao**	  |Varchar	|max_length=30			|				    		|Código da operação|
-|descricao		  |Varchar	|max_length=128			|				    		|Descrição da Ferramenta|
-|coeficiente_multiplicacao|DecimalField	|max_digits=20,<br>decimal_places=10|				    		|Número de peças incrementadas à cada ciclo de máquina.Por exemplo número de cavidades quando for injetora.|
+|**descricao**		  |Varchar	|max_length=128			|				    		|Descrição da Ferramenta|
+|**coeficiente_multiplicacao**|DecimalField	|max_digits=20,<br>decimal_places=10|				    		|Número de peças incrementadas à cada ciclo de máquina.Por exemplo número de cavidades quando for injetora.|
 |depreciacao		  |DecimalField	|max_digits=20,<br>decimal_places=10|default = 0			    	|O valor padrão é 0. Quando se tem um molde que uma cavidade está danificada, deve-se enviar a quantidade danificada nesta coluna.|
-|tempo_ciclo		  |Integer	|				|				    		|Define tempo padrão da ferramenta, ou seja, ciclo padrão.O valor é milissegundo. 10 segundos = 10.000|
-|limite_ciclo		  |Integer	|				|				   		|Este limite da uma “tolerância” ao tempo normal de ciclo,como no exemplo acima usei o valor 10.000. Se eu quiser dar 30 segundos de tolerância, utilizo o valor 40.000.|
+|**tempo_ciclo**		  |Integer	|				|				    		|Define tempo padrão da ferramenta, ou seja, ciclo padrão.O valor é milissegundo. 10 segundos = 10.000|
+|**limite_ciclo**		  |Integer	|				|				   		|Este limite da uma “tolerância” ao tempo normal de ciclo,como no exemplo acima usei o valor 10.000. Se eu quiser dar 30 segundos de tolerância, utilizo o valor 40.000.|
 |limite_parada		  |Integer	|				|				   		|Este campo substitui o tempo_ciclo quando usado um modo exclusivo para usinagem, geralmente Tornos CNC.|
-|situacao		  |Integer	|				|default=0			    		||
+|**situacao**		  |Integer	|				|default=0			    		||
 |status_imp		  |Varchar	|max_length=1			|'N'=new,<br>'U'=update,<br>'I'=integrated	|Define status da linha, caso for importação por tabela.|
 
 
