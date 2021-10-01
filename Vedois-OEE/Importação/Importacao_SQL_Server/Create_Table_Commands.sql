@@ -14,7 +14,7 @@ create table importferramenta
     tempo_insercao            bigint          default 0,
     tempo_remocao             bigint          default 0,
     status_imp                varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -47,7 +47,7 @@ create table importferramentaproduto
         check ([tipo_cadastro] = 'I' OR [tipo_cadastro] = 'M'),
     situacao                  int             default 0,
     status_imp                varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -66,7 +66,7 @@ create table importgrupomaquina
     nome       varchar(32),
     descricao  varchar(128),
     status_imp varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -90,7 +90,7 @@ create table importmaquina
     ativa            bit             default 'false',
     fator_velocidade decimal(20, 10) default 1,
     status_imp       varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -116,7 +116,7 @@ create table importmotivoparada
     ativa      bit default 'True',
     setup      bit default 'False',
     status_imp varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -137,7 +137,7 @@ create table importmotivorefugo
     descricao  varchar(128),
     qualidade  bit default 'False',
     status_imp varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -171,7 +171,7 @@ create table importop
     situacao       varchar(1)
         check ([situacao] = 'L' OR [situacao] = 'F' OR [situacao] = 'C'),
     status_imp     varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -192,7 +192,7 @@ create table importoperador
     nome       varchar(128),
     ativo      bit default 'True',
     status_imp varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -212,7 +212,7 @@ create table importproduto
     codigo     varchar(30),
     descricao  varchar(128),
     status_imp varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -247,8 +247,8 @@ create table importsequenciaproducao
         check ([situacao] = 'L' OR [situacao] = 'F' OR [situacao] = 'C')
         check ([situacao] = 'L' OR [situacao] = 'F' OR [situacao] = 'C'),
     status_imp           varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
     
 )
 go
@@ -269,7 +269,7 @@ create table importsubproduto
     codigo     varchar(30),
     descricao  varchar(128),
     status_imp varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -320,7 +320,7 @@ create table importcomponentesimportados
     reg        int default 0,
     controle   int default 0,
     status_imp     varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
 
@@ -344,6 +344,6 @@ create table importcomponentesop
     quantidade_reservada decimal(20, 10) default 0,
     reg        int default 0,
     status_imp     varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N')
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
