@@ -347,3 +347,29 @@ create table importcomponentesop
         check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
 )
 go
+
+create table importdadosextrasseq
+(
+    id             int not null
+        constraint importdadosextrasseq_pkey
+            primary key,
+    empresa        int             default 1,
+    codigo         varchar(30),
+    origem         varchar(30)     default 0,
+    sequencia      int,
+    estagio        int,
+    key            varchar(128),
+    value          varchar(128),
+    data_envio     datetime,
+    data_integracao datetime,
+    status_imp     varchar(1)
+        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
+)
+go
+
+create table importdadosextrasseq_id_table
+(
+    id int identity
+        primary key
+)
+go
