@@ -244,10 +244,8 @@ create table importsequenciaproducao
     taxa_de_conversao    int,
     unidade_medida       varchar(4),
     situacao             varchar(1),
-        check ([situacao] = 'L' OR [situacao] = 'F' OR [situacao] = 'C')
         check ([situacao] = 'L' OR [situacao] = 'F' OR [situacao] = 'C'),
     status_imp           varchar(1)
-        check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
         check ([status_imp] = 'I' OR [status_imp] = 'U' OR [status_imp] = 'N' OR [status_imp] = 'E')
     
 )
