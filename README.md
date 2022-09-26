@@ -471,3 +471,7 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 | inicio | DateTimeField |  | blank=True, null=True ||
 
 </details>
+
+## 2.1 Tipos de Exportação:
+
+Documentação: [Link Aqui](https://vedois.notion.site/Integra-o-Tipos-de-Exporta-o-b528b84b06ef42fb98a088932c5d38b6)
