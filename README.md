@@ -459,11 +459,14 @@ Para maquinas lineares, na maioria das vezes essa tabela não é utilizada na im
 | reg | IntegerField |  | default=0, blank=True, null=True | Esse campo é responsavel por saber o "status" do evento, como reg = 2 enviado ou 5 erro.|
 | codigo | Varchar | max_length=32 |  ||
 | versao | Varchar | max_length=64 | blank=True, null=True ||
+| volume | IntegerField |  | blank=True, null=True |Campo utilizado para marcar sequencialmente o número do volume gerado|
 | descricao | Varchar | max_length=64 | blank=True, null=True ||
 | codigo_barras | Varchar | max_length=64 |  ||
 | tipo | Varchar | max_length=2 | L=lote+largura+espessura, M=massa,T=tinta, B=bobina ||
 | lote | Varchar | max_length=32 | blank=True, null=True ||
 | quantidade | DecimalField | max_digits=20, decimal_places=10 | default=0 ||
+| peso | DecimalField | max_digits=20, decimal_places=10 | default=0 ||
+| peso_bruto | DecimalField | max_digits=20, decimal_places=10 | default=0 ||
 | atributo | DecimalField | max_digits=20, decimal_places=10 | default=0 ||
 | atributo2 | DecimalField | max_digits=20, decimal_places=10 | default=0 ||
 | atributo3 | DecimalField | max_digits=20, decimal_places=10 | default=0 ||
